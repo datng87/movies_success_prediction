@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Movie prediction</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style_chart2.css') }}">
+
+</head>
+
+<body>
+  <div class="container-fluid">
+
+    <div class="row">
+      <div class="col-md-4">
+        <label for="startYear">Movie year:</label>
+        <input type="number" id="startYear" name="startYear" value="2022">
+      </div>
+      <div class="col-md-4">
+        <label for="runtimeMinutes">Movie length (minutes):</label>
+        <input type="number" id="runtimeMinutes" name="runtimeMinutes" value="0">
+      </div>
+      <div class="col-md-4">
+        <label for="number_of_languages">Number of languages:</label>
+        <input type="number" id="number_of_languages" name="number_of_languages" value="1">
+      </div>
+    </div>
+    <p></p>
+    <div class="row">
+      <div class="col-md-4">
+        <label for="budget">Budget:</label>
+        <input type="number" id="budget" name="budget" value="0">
+      </div>
+      <div class="col-md-4">
+        <label for="is_in_collection">Has prequel? (0:No , 1:Yes):</label>
+        <input type="number" id="is_in_collection" name="is_in_collection" value="0">
+      </div>
+      <div class="col-md-4">
+        <label for="release_month">Movie released month:</label>
+        <input type="number" id="release_month" name="release_month" value="0">
+      </div>
+    </div>
+    <p></p>
+    <div class="row">
+      <div class="col-md-4">
+        <label for="Actors">Top actor names (separated by ','):</label>
+        <input type="text" id="Actors" name="Actors">
+      </div>
+      <div class="col-md-4">
+        <label for="Rated">Rating:</label>
+
+        <select name="Rated" id="Rated">
+          <option value="R">R</option>
+          <option value="MA">MA</option>
+          <option value="PG">PG</option>
+          <option value="G">G</option>
+          <option value="PG_13">PG_13</option>
+          <option value="TV_14">TV_14</option>
+          <option value="Unrated">Unrated</option>
+          <option value="Unknown">Unknown</option>
+        </select>
+      </div>
+      <div class="col-md-4">
+
+
+      </div>
+    </div>
+    <p></p>
+
+    <!-- value="John" // default value-->
+    <div class="row">
+      <p>Gernes</p>
+      <div class="col-md-1">
+        <input type="checkbox" id="Mystery" name="Mystery" value="Mystery">
+        <label for="Mystery">Mystery</label>
+      </div>
+      <div class="col-md-1">
+        <input type="checkbox" id="Adventure" name="Adventure" value="Adventure">
+        <label for="Adventure">Adventure</label>
+      </div>
+      <div class="col-md-2">
+        <input type="checkbox" id="Documentary" name="Documentary" value="Documentary">
+        <label for="Documentary">Documentary</label>
+      </div>
+      <div class="col-md-1">
+        <input type="checkbox" id="Drama" name="Drama" value="Drama">
+        <label for="Drama">Drama</label>
+      </div>
+      <div class="col-md-1">
+        <input type="checkbox" id="Thriller" name="Thriller" value="Thriller">
+        <label for="Thriller">Thriller</label>
+      </div>
+      <div class="col-md-1">
+        <input type="checkbox" id="Comedy" name="Comedy" value="Comedy">
+        <label for="Comedy">Comedy</label>
+      </div>
+      <div class="col-md-1">
+        <input type="checkbox" id="Action" name="Action" value="Action">
+        <label for="Action">Action</label>
+      </div>
+      <div class="col-md-1">
+        <input type="checkbox" id="Crime" name="Crime" value="Crime">
+        <label for="Crime">Crime</label>
+      </div>
+      <div class="col-md-1">
+        <input type="checkbox" id="Horror" name="Horror" value="Horror">
+        <label for="Horror">Horror</label>
+      </div>
+      <div class="col-md-1">
+        <input type="checkbox" id="Romance" name="Romance" value="Romance">
+        <label for="Romance">Romance</label>
+      </div>
+      <div class="col-md-1">
+        <input type="checkbox" id="unknown" name="unknown" value="unknown">
+        <label for="unknown">Other</label>
+      </div>
+    </div>
+
+    <p>
+      <br>
+    </p>
+
+
+    <button id="predict" type="button">Predict</button>
+
+    <p></p>
+
+    <div class="row">
+      <div class="col-md-6">
+        <label for="Result">Result:</label>
+        <input type="text" id="Result" name="Result">
+      </div>
+    </div>
+    <p></p>
+    <p>
+      For visualization, please click on this <a href="https://www.google.com"> link </a>
+    </p>
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+  <!-- <script src="https://cdn.plot.ly/plotly-latest.min.js"></script> -->
+  <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> -->
+  <script src="{{ url_for('static', filename='js/predict.js') }}"></script>
+
+
+</body>
+
+</html>
