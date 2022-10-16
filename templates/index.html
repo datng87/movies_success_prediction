@@ -73,7 +73,10 @@
     </div>
 
     <div class="row">
-
+      <div class="col-md-4">
+        <label for="movieName">Movie name:</label>
+        <input type="Text" id="movieName" name="movieName" value="The Jurassic World">
+      </div>
       <div class="col-md-4">
         <label for="startYear">Movie year:</label>
         <input type="number" id="startYear" name="startYear" value="2022">
@@ -82,13 +85,13 @@
         <label for="runtimeMinutes">Movie length (minutes):</label>
         <input type="number" id="runtimeMinutes" name="runtimeMinutes" value="0">
       </div>
+    </div>
+    <p></p>
+    <div class="row">
       <div class="col-md-4">
         <label for="number_of_languages">Number of languages:</label>
         <input type="number" id="number_of_languages" name="number_of_languages" value="1">
       </div>
-    </div>
-    <p></p>
-    <div class="row">
       <div class="col-md-4">
         <label for="budget">Budget:</label>
         <input type="number" id="budget" name="budget" value="0">
@@ -97,13 +100,13 @@
         <label for="is_in_collection">Has prequel? (0:No , 1:Yes):</label>
         <input type="number" id="is_in_collection" name="is_in_collection" value="0">
       </div>
+    </div>
+    <p></p>
+    <div class="row">
       <div class="col-md-4">
         <label for="release_month">Movie released month:</label>
         <input type="number" id="release_month" name="release_month" value="0">
       </div>
-    </div>
-    <p></p>
-    <div class="row">
       <div class="col-md-4">
         <label for="Actors">Top actor names (separated by ','):</label>
         <input type="text" id="Actors" name="Actors">
@@ -211,9 +214,11 @@
       <br><br>
       Data source:
     <ul>
-      <li> https://datasets.imdbws.com/</li>
+      <li>https://datasets.imdbws.com/</li>
       <li>http://www.omdbapi.com/</li>
       <li>https://developers.themoviedb.org/3</li>
+      <li>https://www.imdb.com/list/ls022928836/</li>
+      <li>https://www.imdb.com/list/ls022928819</li>
     </ul>
 
     <br>
