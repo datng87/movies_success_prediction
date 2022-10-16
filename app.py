@@ -42,18 +42,6 @@ class prediction(Resource):
 
 
 # data api
-class getData(Resource):
-    def get(self):
-            df = pd.read_excel('data.xlsx')
-            df =  df.rename({'Marketing Budget': 'budget', 'Actual Sales': 'sale'}, axis=1)  # rename columns
-            # print(df.head())
-            # out = {'key':str}
-            res = df.to_json(orient='records')
-            # print( res)
-            return res
-
-#
-api.add_resource(getData, '/api')
 api.add_resource(prediction, '/prediction/<predict_input>')
 
 if __name__ == '__main__':
