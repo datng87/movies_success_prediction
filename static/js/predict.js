@@ -16,8 +16,9 @@ function predict_function() {
     var Rated = d3.select("#Rated").property("value");
 
 
+
     if (startYear == "") {
-        startYear = 2022;
+        startYear = 2017;
     };
     if (runtimeMinutes == "") {
         runtimeMinutes = 0;
@@ -154,6 +155,18 @@ function predict_function() {
         genre_Romance=1;
     }
 
+    // scale_dict = [startyearMin,startyearMax,runtimeMinutesMin,runtimeMinutesMax,number_of_languagesMin,number_of_languagesMax,budgetMin,budgetMax,
+    //     release_monthMin,release_monthMax,popular_actors_countMin,popular_actors_countMax]
+    // [2017, 2022, 0, 295, 1, 104, 0, 356000000, 0, 12, 0, 3]
+
+    
+    startYear = (startYear-2017)/(2022-2017);
+    runtimeMinutes=(runtimeMinutes)/295;
+    number_of_languages=(number_of_languages-1)/103;
+    budget=(budget)/356000000;
+    release_month=release_month/12;
+    popular_actors_count=popular_actors_count/3;
+
     var data = [startYear,runtimeMinutes,number_of_languages,budget,is_in_collection,
         release_month,popular_actors_count,rated_unknown,rated_R,rated_MA,rated_Unrated,rated_PG,rated_TV_14,rated_PG_13,rated_G,
         genre_Mystery,genre_Adventure,genre_Documentary,genre_Drama,genre_Thriller,genre_Comedy,genre_Action,genre_unknown,genre_Crime,
@@ -176,6 +189,23 @@ function predict_function() {
     d3.json(url).then(function (movie_result) {
         var result = document.getElementById("Result");
         result = result;
+        switch (movie_result) {
+            case '0':
+                movie_result = "E";
+                break;
+            case '1':
+                movie_result = 'D';
+                break;
+            case '2':
+                movie_result = 'C';
+                break;
+            case '3':
+                movie_result = 'B';
+                break;
+            case '4':
+                movie_result = 'A'
+                break;
+        }
         result.setAttribute("value", movie_result);
     });
 };

@@ -24,7 +24,7 @@ class prediction(Resource):
         
         input_data = predict_input.split(',')
         
-        input_data_number = [int(numeric_string) for numeric_string in input_data]
+        input_data_number = [float(numeric_string) for numeric_string in input_data]
             
 
         df = pd.DataFrame([input_data_number], columns=['startYear', 'runtimeMinutes',
