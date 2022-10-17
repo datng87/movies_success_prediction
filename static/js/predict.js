@@ -189,23 +189,6 @@ function predict_function() {
     d3.json(url).then(function (movie_result) {
         var result = document.getElementById("Result");
         result = result;
-        switch (movie_result) {
-            case '0':
-                movie_result = "E";
-                break;
-            case '1':
-                movie_result = 'D';
-                break;
-            case '2':
-                movie_result = 'C';
-                break;
-            case '3':
-                movie_result = 'B';
-                break;
-            case '4':
-                movie_result = 'A'
-                break;
-        }
         result.setAttribute("value", movie_result);
     });
 };
